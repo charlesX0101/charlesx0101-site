@@ -92,7 +92,7 @@ main a:hover {
   text-decoration: underline;
 }
 
-/* Logo Column */
+/* Logo Column (desktop only) */
 .logo-column {
   grid-column: 3;
   display: flex;
@@ -110,11 +110,6 @@ main a:hover {
 .logo-github {
   width: 190px;
   max-width: 100%;
-}
-
-/* Hide mobile logo by default */
-.mobile-logo-top {
-  display: none;
 }
 
 /* Footer */
@@ -196,7 +191,7 @@ main > h1::after {
   color: var(--accent-teal);
 }
 
-/* --- CONTACT PAGE --- */
+/* Contact Page */
 .contact-layout {
   display: flex;
   flex-direction: row;
@@ -269,10 +264,12 @@ main > h1::after {
     padding: 1rem;
   }
 
+  /* Hide full logo column (desktop only) */
   .logo-column {
     display: none;
   }
 
+  /* Show mobile logo */
   .mobile-logo-top {
     display: flex;
     justify-content: center;
@@ -284,6 +281,7 @@ main > h1::after {
     max-width: 90%;
   }
 
+  /* Hide GitHub logo on mobile (extra safety) */
   .logo-github {
     display: none !important;
   }

@@ -1,0 +1,329 @@
+:root {
+  --bg-color: #0d1117;
+  --text-color: #9b9b9d;
+  --accent-teal: #4c585d;
+  --accent-orange: #bd5c05;
+  --accent-green: #39ff14;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-mono);
+  font-size: 17px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation */
+.nav-bar {
+  width: 100%;
+  border-bottom: 1px solid #2d2d2d;
+  background: #24292e;
+}
+
+nav {
+  max-width: 1100px;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  gap: 1.25rem;
+}
+
+nav a {
+  color: var(--accent-orange);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: var(--accent-teal);
+}
+
+/* Main layout */
+.main-area {
+  display: grid;
+  grid-template-columns: 1fr minmax(350px, 900px) 360px;
+  gap: 2rem;
+  flex: 1;
+  padding: 2rem 2rem 4rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  grid-column: 2;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+main h1, main h2 {
+  margin-bottom: 1rem;
+}
+
+main p {
+  margin-bottom: 1rem;
+}
+
+main a {
+  color: var(--accent-teal);
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+/* Logo Column */
+.logo-column {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.logo-main {
+  width: 400px;
+  max-width: 100%;
+}
+
+.logo-github {
+  width: 190px;
+  max-width: 100%;
+}
+
+/* Hide mobile logo by default */
+.mobile-logo-top {
+  display: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+/* Blinking terminal cursor */
+main > h1::after {
+  content: "_";
+  color: var(--accent-orange);
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Repo Grid */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid #24292e;
+  padding-top: 2rem;
+}
+
+.repo-card {
+  background-color: #111;
+  border: 1px solid #24292e;
+  padding: 1.25rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.repo-card h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.repo-card a {
+  color: var(--accent-teal);
+  text-decoration: none;
+}
+
+.repo-card a:hover {
+  text-decoration: underline;
+}
+
+.repo-card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}
+
+/* Topic list */
+.topic-list-inline {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.topic-list-inline li a {
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+
+.topic-list-inline li a:hover {
+  color: var(--accent-teal);
+}
+
+/* --- CONTACT PAGE --- */
+.contact-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  flex-wrap: nowrap;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 280px;
+}
+
+.contact-section h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.contact-section a {
+  color: var(--accent-teal);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+.contact-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+}
+
+.contact-logo-main {
+  width: 120px;
+  max-width: 100%;
+}
+
+.contact-logo-github {
+  width: 70px;
+  max-width: 100%;
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 15px;
+  }
+
+  .main-area {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .logo-column {
+    display: none;
+  }
+
+  .mobile-logo-top {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem 0 1rem;
+  }
+
+  .logo-main-mobile {
+    width: 140px;
+    max-width: 90%;
+  }
+
+  .logo-github {
+    display: none !important;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+  }
+
+  .repo-card {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .repo-card p {
+    font-size: 0.85rem;
+  }
+
+  .terminal-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .contact-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .contact-logos {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .contact-logo-main {
+    width: 100px;
+  }
+
+  .contact-logo-github {
+    width: 60px;
+  }
+}

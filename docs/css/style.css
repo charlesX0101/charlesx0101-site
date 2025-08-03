@@ -120,6 +120,16 @@ footer {
   margin-top: auto;
 }
 
+/* Mobile logo default: hidden */
+.mobile-logo-top {
+  display: none;
+}
+
+.logo-main-mobile {
+  width: 140px;
+  max-width: 90%;
+}
+
 /* Blinking terminal cursor */
 main > h1::after {
   content: "_";
@@ -264,24 +274,19 @@ main > h1::after {
     padding: 1rem;
   }
 
-  /* Hide full logo column (desktop only) */
+  /* Hide desktop logo column */
   .logo-column {
     display: none;
   }
 
   /* Show mobile logo */
   .mobile-logo-top {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     margin: 1.25rem 0 1rem;
   }
 
-  .logo-main-mobile {
-    width: 140px;
-    max-width: 90%;
-  }
-
-  /* Hide GitHub logo on mobile (extra safety) */
+  /* Hide GitHub logo */
   .logo-github {
     display: none !important;
   }
